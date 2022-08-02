@@ -1,0 +1,92 @@
+.Task {
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0px;
+  min-height: 41px;
+  user-select: none;
+
+  &:hover {
+    > .button.trash {
+      display: flex;
+    }
+  }
+
+  &.active {
+    > .button.mark {
+      background-color: grey;
+      color: white;
+
+      > svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  > .button.mark {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.15s linear;
+
+    &.active {
+      transform: scale(1.4);
+    }
+
+    &.disActive {
+      transform: scale(1.4);
+    }
+
+    &:hover {
+      > svg {
+        opacity: 1;
+      }
+    }
+
+    > svg {
+      opacity: 0;
+      width: 18px;
+      height: 18px;
+      transform: scale(1.4);
+      transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+    }
+  }
+
+  > .content {
+    flex: 1;
+  }
+
+  > .button.trash {
+    margin-left: 8px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: #eeeeee;
+
+      > svg {
+        color: #de4c4a;
+      }
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    > svg {
+      color: grey;
+    }
+  }
+}

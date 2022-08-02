@@ -1,0 +1,126 @@
+.header {
+  height: 45px;
+  background-color: #db4c3f;
+
+  .content {
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__hover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+
+      > svg {
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    &__left {
+      display: flex;
+      align-items: stretch;
+      height: 28px;
+      margin-right: 10px;
+
+      > *:not(:last-child) {
+        margin-right: 5px;
+        width: 28px;
+      }
+
+      .input-block {
+        display: flex;
+        position: relative;
+
+        > input {
+          font-family: 'Roboto', 'segoe UI';
+          outline: none;
+          border: 1px solid transparent;
+          padding: 5px 5px 5px 34px;
+          width: 100%;
+          border-radius: 3px;
+          color: #ffffff;
+          background-color: hsla(0, 0%, 100%, 0.2);
+          transition: color 0.1s ease-out, width 0.2s ease-in,
+            background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+          &::placeholder {
+            color: #ffffff;
+            transition: color 0.1s ease-out;
+          }
+
+          &:focus,
+          &:hover {
+            + svg {
+              color: #202020;
+            }
+
+            color: #202020;
+            background-color: #ffffff;
+            border: 1px solid transparent;
+
+            &::placeholder {
+              color: #202020;
+            }
+          }
+        }
+
+        > svg {
+          color: #ffffff;
+          position: absolute;
+          left: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          transition: color 0.1s ease-out;
+          cursor: text;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: stretch;
+      height: 32px;
+
+      > *:not(:last-child) {
+        width: 32px;
+        margin-right: 5px;
+      }
+
+      .menu__button {
+        margin-left: 5px;
+        width: 32px;
+        height: 100%;
+
+        > img {
+          border-radius: 50%;
+          height: 100%;
+        }
+
+        > svg {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
